@@ -15,9 +15,16 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-size: cover;
-    background-repeat: no-repeat;
     position: relative;
+}
+
+
+.video {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
 }
 
 body:after {
@@ -27,13 +34,13 @@ height: 100%;
 width: 100%;
 top: 0;
 left: 0;
-background: rgba(0,0,0,0.3);
+background: rgba(0,0,0,0.5);
 z-index: 1 !important;
 }
 
 .grid-container {
     z-index: 2;
-    backdrop-filter: blur(4px);
+    backdrop-filter: brightness(30%);
     width: 90%;
     margin-top: 2rem;
     padding: 1rem;
@@ -42,7 +49,7 @@ z-index: 1 !important;
     gap: 1.75rem;
     color: white;
     grid-template-columns: repeat(2, minmax(200px,1fr));
-    box-shadow:  inset 1px 1px 10px white;
+    box-shadow:  inset 1px 1px 10px white, 3px 3px 10px black;
     border-radius: 5px;
 }
 
@@ -81,7 +88,7 @@ hr {
 
 .item-info h4 {
     font-weight: 1100;
-    font-size: 1.5rem;
+    font-size: 1.65rem;
 }
 
 #title {
