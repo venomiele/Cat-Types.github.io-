@@ -66,9 +66,9 @@ z-index: 1 !important;
 
 .photo {
     height: 150px;
-    max-width: 250px;
+    max-width: 200px;
     width: 100%;
-    border: 2px solid lightgrey;
+    border: 5px solid white;
     border-radius: 5px;
     box-shadow: 2px 5px 20px black;
 }
@@ -99,7 +99,7 @@ hr {
 
 .item-info h4 {
     font-weight: 1100;
-    font-size: 1.65rem;
+    font-size: 1.45rem;
 }
 
 
@@ -107,4 +107,76 @@ hr {
     font-size: 2.25rem;
     color: white;
     animation: appear 1s ease-in;
+}
+
+
+@media screen and (max-width: 1122px) {
+    .grid-container {
+        z-index: 2;
+        backdrop-filter: brightness(30%);
+        width: 60%;
+        margin-top: 2rem;
+        padding: 1rem;
+        display: grid;
+        gap: 1.75rem;
+        color: white;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        box-shadow:  inset 1px 1px 10px white, 3px 3px 10px black;
+        border-radius: 5px;
+        animation: appear 1s ease-in;
+    }
+
+    .menu-item {
+        width: 100%;
+    }
+
+header {
+    width: 100%;
+}
+    
+}
+
+@media screen and (max-width: 866px) {
+    .photo {
+        height: 100%;
+        max-width: 100px;
+        width: 100%;
+        border: 5px solid white;
+        border-radius: 5px;
+        box-shadow: 2px 5px 20px black;
+    }
+
+    .grid-container {
+        width: 80%;
+    }
+
+    .description {
+        padding-top: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 509px) {
+    .description {
+        padding-top: 1.25rem;
+        font-size: 0.75rem;
+    }
+    
+    .item-info h4 {
+        font-weight: 1100;
+        font-size:1rem;
+    }
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .photo {
+        height: 100%;
+        max-width: 100%;
+        width: 100%;
+        border: 5px solid white;
+        border-radius: 5px;
+        box-shadow: 2px 5px 20px black;
+    }
 }
