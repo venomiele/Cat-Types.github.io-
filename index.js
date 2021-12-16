@@ -1,4 +1,5 @@
 const section = document.querySelector(".grid-container");
+const filterBtn = document.querySelectorAll(".filter-btn");
 
 // Array of local objects
 const kittens = [
@@ -49,6 +50,22 @@ const kittens = [
     img: "https://www.purina.com.au/-/media/project/purina/main/breeds/cat/cat_devon-rex_desktop.jpg?h=475&la=en&w=825&hash=6E725E6A0932835DF36DD27DEF9638C4",
     desc: "The Devon Rex is sometimes called a poodle who purrs."
 
+  },
+  { id: 7,
+    title: "Munchkin Cat",
+    category: "small",
+    age: 12,
+    img: "https://vetstreet.brightspotcdn.com/dims4/default/fbf0716/2147483647/thumbnail/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F44%2Fca%2F0d2d9db049ff933701e6ab7fc477%2Fmunckin-kitten-ap-vzjbhr-645-x-380.jpg",
+    desc: "They may have short legs, but Munchkin Cats don’t let it hold them back."
+
+  },
+  { id: 8,
+    title: "Norwegian Cat",
+    category: "medium",
+    age: 14,
+    img: "https://cat-world.com/wp-content/uploads/2017/02/norwegian-forest-cat.jpg",
+    desc: "They’re large and athletic, so you may find them sitting atop the highest point in your home."
+
   }
 ]
 
@@ -64,7 +81,28 @@ window.addEventListener("DOMContentLoaded", () => {
         smartBackspace: true,
       });
 
-      let displayCats = kittens.map(function (item){
+// Buttons
+filterBtn.forEach(function(btn){
+  btn.addEventListener("click",function(e){
+    const category = e.currentTarget.dataset.id;
+    const menuCategory = kittens.filter(function(kittenItem){
+      if(kittenItem.category === category) {
+        return kittenItem;
+      }
+    });
+      if(category === "all"){
+        displayItems(kittens)
+      } else {
+        displayItems(menuCategory);
+      }
+
+  })
+})
+
+displayItems(kittens);
+
+function displayItems(Items) {
+      let displayCats = Items.map(function (item){
 return `<article class="menu-item">
     <img src="${item.img}" alt="menu-item" class="photo">
     <div class="item-info">
@@ -79,6 +117,6 @@ return `<article class="menu-item">
       });
       displayCats = displayCats.join("");
       section.innerHTML = displayCats;
-
+    }
 })
 
