@@ -54,7 +54,24 @@ z-index: 1 !important;
     animation: appear 1s ease-in;
 }
 
+.filter-btn {
+    border: none;
+    padding:5px 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    margin: 5px;
+    box-shadow:0px 2px black;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    }
+    
+    .filter-btn:hover {
+        background-color: black;
+        color: white;
+    }
+
 /* Text animation */
+
 
 /* Appear animation */
 @keyframes appear {
@@ -109,21 +126,7 @@ hr {
     animation: appear 1s ease-in;
 }
 
-.filter-btn {
-border: none;
-padding:5px 10px;
-border-radius: 5px;
-font-weight: 700;
-margin: 5px;
-box-shadow:0px 2px black;
-cursor: pointer;
-transition: all 0.2s linear;
-}
 
-.filter-btn:hover {
-    background-color: black;
-    color: white;
-}
 
 
 @media screen and (max-width: 1122px) {
