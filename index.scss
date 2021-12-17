@@ -121,7 +121,8 @@ transition: all 0.2s linear;
 }
 
 .filter-btn:hover {
-    background-color: lightgrey;
+    background-color: black;
+    color: white;
 }
 
 
@@ -186,6 +187,7 @@ header {
         flex-direction: column;
     }
 
+
     .photo {
         height: 100%;
         max-width: 100%;
@@ -193,5 +195,9 @@ header {
         border: 5px solid white;
         border-radius: 5px;
         box-shadow: 2px 5px 20px black;
+    }
+
+    .item-info {
+        padding: 1rem;
     }
 }
